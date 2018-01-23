@@ -5,9 +5,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
-
-
-
+import Page from './Contacts';
 
 class App extends Component {
 
@@ -35,6 +33,7 @@ class App extends Component {
               <MenuItem>Menu Item 2</MenuItem>
             </Drawer>
         </div>
+          <Page/>
       </div>
       </MuiThemeProvider>
     );
