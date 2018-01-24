@@ -7,6 +7,8 @@ import CommunicationCall from 'material-ui/svg-icons/communication/call';
 import CommunicationChatBubble from 'material-ui/svg-icons/communication/chat-bubble';
 import { indigo500 } from 'material-ui/styles/colors';
 import CommunicationEmail from 'material-ui/svg-icons/communication/email';
+import ContactList from './ContactList';
+
 
 class Contacts extends Component {
 
@@ -29,27 +31,20 @@ class Contacts extends Component {
   }
 
   render() {
-
-    let contacts = this.state.list.map((contact, index) => {
-      return (
-        <div key={contact.name.toString()}>
-        <Divider />
-          <ListItem  primaryText={contact.name} />
-          <ListItem
-            leftIcon={<CommunicationCall color={indigo500} />} primaryText={contact.phone_number}
-            secondaryText={contact.address}
-          />
-        <Divider />
-        </div>
-
-      )
-    })
     return (
-      <MobileTearSheet>
-        <List>
-          {contacts}
-        </List>
-      </MobileTearSheet>
+      <div>
+        <MobileTearSheet >
+          <List>
+             <div>
+                <MobileTearSheet >
+                    <List>
+            <ContactList contacts={this.state.list}/>
+            </List>
+                </MobileTearSheet>
+            </div>            
+          </List>
+        </MobileTearSheet>
+      </div>
     )
   }
 }

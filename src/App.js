@@ -11,8 +11,6 @@ class App extends Component {
     super(props);
     this.state = {open: true};
   }
-
-  handleToggle = () => this.setState({open: !this.state.open});
   
   render() {
     return (
@@ -21,13 +19,7 @@ class App extends Component {
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
           </header>
-            <div>
-              <RaisedButton
-                label="Toggle Drawer"
-                onClick={this.handleToggle}
-              />
-          </div>
-            <Contacts/>
+          <Contacts/>
         </div>
       </MuiThemeProvider>
     );

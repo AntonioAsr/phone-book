@@ -7,9 +7,9 @@ class MobileTearSheet extends Component {
     children: PropTypes.node,
     height: PropTypes.number.isRequired,
   };
-
+  //pass number of current contacts to set max height?
   static defaultProps = {
-    height: 500,
+    height: 1200,
   };
 
   static contextTypes = {
@@ -23,23 +23,17 @@ class MobileTearSheet extends Component {
 
     const styles = {
       root: {
-        marginBottom: 24,
-        marginRight: 24,
-        maxWidth: 360,
-        width: '100%',
+        maxWidth: 560,
+        display:'block',
+        margin:'auto'
       },
       container: {
         border: 'solid 1px #d9d9d9',
         borderBottom: 'none',
         height: this.props.height,
-        overflow: 'hidden',
-      },
-      bottomTear: {
         display: 'block',
-        position: 'relative',
-        marginTop: -10,
-        maxWidth: 360,
-      },
+        margin: 'auto'
+      }
     };
 
     return (
@@ -47,7 +41,6 @@ class MobileTearSheet extends Component {
         <div style={prepareStyles(styles.container)}>
           {this.props.children}
         </div>
-        <img style={prepareStyles(styles.bottomTear)} src="images/bottom-tear.svg" />
       </div>
     );
   }
